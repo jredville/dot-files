@@ -6,4 +6,25 @@
     ~/.bash_logout: bash_logout
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
+    ~/.gitignore:
+    ~/.tmux.conf: tmux.conf
+    ~/.spacemacs: spacemacs
+    ~/.ctags:
+    ~/.aprc: irb/aprc
+    ~/.pryrc: irb/pryrc
+    ~/.gemrc: ruby/gemrc
+    ~/.rdebugrc: ruby/rdebugrc
+    ~/.editrc:
+    ~/.inputrc:
+    ~/.vimrc.before.local: vimrc.before.local
+    ~/.vimrc.bundles.local: vimrc.bundles.local
+    ~/.vimrc.local: vimrc.local
+    ~/.Xmodmaprc: xmodmaprc
+    ~/.xinitrc: xinitrc
+    ~/.ssh/config:
+      create: true
+      path: sshconfig
 
+- shell:
+  - ['[[ -d "$HOME/.emacs.d" ]] && exit 0 || git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d', "Installing spacemacs if needed"]
+  - 'echo Run sh <(curl https://j.mp/spf13-vim3 -L)'

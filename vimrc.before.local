@@ -1,0 +1,5 @@
+let g:spf13_no_autochdir = 1
+let g:spf13_no_views = 1
+let g:spf13_no_easyWindows = 1
+let g:spf13_use_powerline = 1
+let g:textobj#quote#educate = 0

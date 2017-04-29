@@ -1,0 +1,44 @@
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
+map <C-H> <C-W>h
+
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-sleuth'
+Bundle 'tpope/vim-dispatch'
+nnoremap <F9> :Dispatch<CR>
+Bundle 'benmills/vimux'
+let g:VimuxOrientation = 'v'
+Bundle 'rizzatti/funcoo.vim'
+
+"Bundle 'tpope/vim-endwise'
+"Bundle 'tpope/vim-unimpaired'
+Bundle "jgdavey/vim-blockle"
+let g:blockle_mapping = '<leader>rb'
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+"Bundle 'kana/vim-smartinput'
+"Bundle 'kana/vim-textobj-underscore'
+"Bundle 'kana/vim-textobj-function'
+"Bundle 'kana/vim-textobj-line'
+"Bundle 'kana/vim-textobj-entire'
+Bundle 'kana/vim-smartword'
+Bundle 'AndrewRadev/switch.vim'
+au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable shiftwidth=2 expandtab
+Bundle 'vim-signature'
+Bundle 'tomtom/quickfixsigns_vim'
+"Bundle 'programble/itchy.vim'
+Bundle 'Handlebars'
+au BufNewFile,BufReadPost *.hbs set ft=handlebars
+Plugin 'JamshedVesuna/vim-markdown-preview'
+Bundle 'eagletmt/ghcmod-vim'
+Bundle 'Shougo/vimproc'
+" Options are: general, writing, programming, snipmate, php, python,
+" javascript, scala, haskell, html, ruby, puppet, go, misc, 
+let g:spf13_bundle_groups=['general', 'programming', 'ruby', 'python', 'go', 'javascript', 'html', 'misc', 'scala', 'writing']

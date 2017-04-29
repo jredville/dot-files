@@ -1,0 +1,37 @@
+Host *
+  ServerAliveInterval=300
+  TCPKeepAlive yes
+  Ciphers blowfish-cbc,aes128-ctr,3des-cbc,cast128-cbc,aes192-ctr,aes256-ctr
+  Compression yes
+
+Host 127.0.0.1
+  ForwardAgent yes
+
+Host fatboy
+  User james
+  HostName home.fatboyxpc.com
+  ForwardAgent yes
+
+Host sean1
+  User=botly
+  HostName=23.111.154.106
+
+Host sean2
+  User=botly
+  HostName=23.111.154.162
+
+Host sean3
+  User=botly
+  HostName=23.111.154.158
+
+Host sean4
+  User=botly
+  HostName=23.111.151.166
+
+Host sean5
+  User=botly
+  HostName=23.111.151.158
+
+Host sean6
+  User=botly
+  HostName=23.111.151.162

@@ -1,0 +1,122 @@
+" vim:ft=vim:
+
+" ruby - set foldmethod=syntax, set nofoldenable
+
+
+set guifont=Inconsolata\ for\ Powerline:h14,Monaco:h13
+set wrap
+set autoread
+set listchars=nbsp:☠,trail:⋅,tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set timeoutlen=250
+
+set splitbelow
+set splitright
+
+if !has('gui_running')
+  set nocursorline
+endif
+let vim_markdown_preview_github=1
+"" NerdTree overrides {
+  "let NERDTreeQuitOnOpen=0
+  "let NERDTreeMouseMode=1
+  "let NERDTreeIgnore+= ['\.DS_Store']
+"" }
+
+"" indent_guides overrides {
+  "let g:indent_guides_enable_on_vim_startup = 0
+"" }
+
+"set shiftwidth=2                " use indents of 2 spaces
+"set tabstop=2                   " an indentation every two columns
+"set softtabstop=2               " let backspace delete indent
+"if has('mouse')
+  "if &term =~ "xterm" || &term =~ "screen"
+    "autocmd VimEnter * set ttymouse=xterm2
+    "autocmd FocusGained * set ttymouse=xterm2
+    "autocmd BufEnter * set ttymouse=xterm2
+  "endif
+"endif
+
+nmap <Leader>a :Tabularize /
+vmap <Leader>a :Tabularize /
+nmap <Leader>a{ :Tabularize /{
+vmap <Leader>a{ :Tabularize /{
+
+" CtrlP settings {
+
+  nnoremap <silent> <Leader>b :CtrlPBuffer<cr>
+  nnoremap <silent> <C-b> :CtrlPBuffer<cr>
+
+  " Idea from : http://www.charlietanksley.net/blog/blog/2011/10/18/vim-navigation-with-lustyexplorer-and-lustyjuggler/
+  " Open CtrlP starting from a particular path, making it much
+  " more likely to find the correct thing first. mnemonic 'jump to [something]'
+  map <Leader>jm :CtrlP app/models<CR>
+  map <Leader>jc :CtrlP app/controllers<CR>
+  map <Leader>jv :CtrlP app/views<CR>
+  map <Leader>jh :CtrlP app/helpers<CR>
+  map <Leader>jl :CtrlP lib<CR>
+  map <Leader>jp :CtrlP public<CR>
+  map <Leader>js :CtrlP spec<CR>
+  map <Leader>jd :CtrlP db<CR>
+  map <Leader>jC :CtrlP config<CR>
+  map <Leader>jV :CtrlP vendor<CR>
+  map <Leader>jT :CtrlP test<CR>
+
+  "Cmd-Shift-(M)ethod - jump to a method (tag in current file)
+  "Ctrl-m is not good - it overrides behavior of Enter
+  nnoremap <silent> <Leader>bm  :CtrlPBufTag<CR>
+" }
+
+
+" Prompt for a command to run
+map <leader>vp :VimuxPromptCommand<CR>
+"" Run last command executed by VimuxRunCommand
+map <leader>vl :VimuxRunLastCommand<CR>
+"" Inspect runner pane
+map <leader>vi :VimuxInspectRunner<CR>
+"" Close all other tmux panes in current window
+map <leader>vx :VimuxClosePanes<CR>
+"" Close vim tmux runner opened by VimuxRunCommand
+map <leader>vq :VimuxCloseRunner<CR>
+"" Interrupt any command running in the runner pane
+map <leader>vs :VimuxInterruptRunner<CR>
+
+"imap <c-l> <space>=><space>
+"imap <C-a> <esc>wa
+
+" Switch config
+map <leader>- :Switch<CR>
+
+" Create window splits easier. The default
+" way is Ctrl-w,v and Ctrl-w,s. I remap
+" this to vv and ss
+nnoremap <silent> vv <C-w>v
+nnoremap <silent> ss <C-w>s
+
+nnoremap L $
+
+"nnoremap p pv`]=
+"nnoremap P Pv`]=
+"nnoremap π p
+"nnoremap ∏ P
+
+inoremap jkl <ESC>
+inoremap kl; <ESC>
+inoremap jjj <ESC>
+inoremap jkl; <ESC>
+
+" Use the arrows to something usefull
+map <right> :bn<cr>
+map <left> :bp<cr>
+
+
+iabbrev Lidsa     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+iabbrev rpry    require 'pry';binding.pry
+
+
+"cleanup quickfix window
+au Filetype qf setlocal colorcolumn=0 nolist nocursorline nowrap
+au BufRead,BufNewFile {Guardfile,Gemfile,Vagrantfile,Thorfile,Rakefile,Capfile,*.rake,*.god,config.ru}     set ft=ruby
+autocmd FileType ruby autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+let g:snips_author = 'Jim Deville <james.deville@gmail.com>'
+UnBundle 'myusuf3/numbers.vim'
