@@ -12,26 +12,26 @@ Host fatboy
   HostName home.fatboyxpc.com
   ForwardAgent yes
 
-Host sean1
+Host s1
   User=botly
   HostName=23.111.154.106
 
-Host sean2
+Host s2
   User=botly
   HostName=23.111.154.162
 
-Host sean3
+Host s3
   User=botly
   HostName=23.111.154.158
 
-Host sean4
+Host s4
   User=botly
   HostName=23.111.151.166
 
-Host sean5
+Host s5
   User=botly
   HostName=23.111.151.158
 
-Host sean6
+Host s6
   User=botly
   HostName=23.111.151.162
