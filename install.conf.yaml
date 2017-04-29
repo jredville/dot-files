@@ -28,3 +28,4 @@
 - shell:
   - ['[[ -d "$HOME/.emacs.d" ]] && exit 0 || git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d', "Installing spacemacs if needed"]
   - 'echo Run sh <(curl https://j.mp/spf13-vim3 -L)'
+  - 'echo Run sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
