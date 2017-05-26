@@ -8,7 +8,9 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore:
     ~/.tmux.conf: tmux.conf
-    ~/.spacemacs: spacemacs
+    ~/.spacemacs.d:
+      create: true
+      path: spacemacs.d/
     ~/.ctags:
     ~/.aprc: irb/aprc
     ~/.pryrc: irb/pryrc
@@ -20,12 +22,32 @@
     ~/.vimrc.bundles.local: vimrc.bundles.local
     ~/.vimrc.local: vimrc.local
     ~/.Xmodmaprc: xmodmaprc
-    ~/.xinitrc: xinitrc
+    # ~/.xprofile: xinitrc
+    ~/.fzf.zsh:
+    ~/.fzf.bash:
     ~/.ssh/config:
       create: true
       path: sshconfig
+    ~/.config/roxterm.sourceforge.net:
+        force: true
+        create: true
+        path: roxterm.sourceforge.net
+    ~/bin:
+      force: true
+      create: true
+      path: bin
+    ~/.config/i3:
+      force: true
+      create: true
+      path: i3
+    /usr/share/xsessions/i3.desktop:
+        force: true
+        path: i3.desktop
 
 - shell:
   - ['[[ -d "$HOME/.emacs.d" ]] && exit 0 || git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d', "Installing spacemacs if needed"]
+  - ['[[ -d "$HOME/.fzf" ]] && exit 0 || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --all', "Installing fzf"]
   - 'echo Run sh <(curl https://j.mp/spf13-vim3 -L)'
+  - 'echo install xcape'
+  - 'echo clone https://github.com/gustavnikolaj/i3-run-or-raise to proj and npm install'
   - 'echo Run sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'

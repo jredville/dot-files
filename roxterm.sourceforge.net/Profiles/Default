@@ -1,0 +1,9 @@
+[roxterm profile]
+font=Roboto Mono for Powerline 12
+colour_scheme=solarized-dark
+hide_menubar=1
+always_show_tabs=0
+scrollback_lines=10000
+saturation=0.870620
+audible_bell=0
+browser_spawn_type=1

@@ -1,0 +1,10 @@
+#!/bin/bash
+fixkeys
+
+# disable tapping and scrolling while typing
+syndaemon -t -k -i 0.2 &
+
+# enable numlock on at boot
+numlockx on
+
+exec i3
