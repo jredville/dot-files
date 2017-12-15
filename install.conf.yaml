@@ -32,6 +32,10 @@
         force: true
         create: true
         path: roxterm.sourceforge.net
+    ~/.config/termite:
+        force: true
+        create: true
+        path: termite
     ~/bin:
       force: true
       create: true
@@ -47,6 +51,7 @@
 - shell:
   - ['[[ -d "$HOME/.emacs.d" ]] && exit 0 || git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d', "Installing spacemacs if needed"]
   - ['[[ -d "$HOME/.fzf" ]] && exit 0 || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --all', "Installing fzf"]
+  - 'echo install autorandr'
   - 'echo Run sh <(curl https://j.mp/spf13-vim3 -L)'
   - 'echo install xcape'
   - 'echo clone https://github.com/gustavnikolaj/i3-run-or-raise to proj and npm install'

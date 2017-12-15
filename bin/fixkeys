@@ -2,4 +2,7 @@
 #fix keyboard
 [[ -f ~/.Xmodmaprc ]] && xmodmap ~/.Xmodmaprc
 
-xcape -t 300 -e "Control_L=Escape"
+if ! pgrep -x "xcape" > /dev/null
+then
+   xcape -t 300 -e "Control_L=Escape"
+fi

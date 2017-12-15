@@ -60,8 +60,10 @@ plugins=(
     npm
     nyan
     rbenv
+    rust
     ssh-agent
     tmux
+    thefuck
     ubuntu
     vi-mode
     z
@@ -75,10 +77,12 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export GOPATH=~/go
+export RUST_SRC_PATH=~/proj/rust/src
 
 path=(
     ./bin
     ~/go/bin
+    ~/.cargo/bin
     $path
 )
 
@@ -112,22 +116,22 @@ fi
 alias e='emacsclient -nw -s foo -a ""'
 alias artisan='php artisan'
 unalias ag
-# alias aelog="tail -f /var/log/apache2/error.log"
-# alias alg="alias | ag"
-# alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias alg="alias | ag"
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 # alias o="xdg-open"
 # alias wakejamespc="wakeonlan 50:46:5D:66:46:87"
 
 
-# alias text-disapproval="echo 'ಠ_ಠ' | clipit"
-# alias text-fliptable="echo '(╯°□°)╯︵ ┻━┻' | clipit"
-# alias text-fliptableharder="echo '(ノಠ益ಠ)ノ彡 ┻━┻' | clipit"
-# alias text-tableflipsyou="echo 'ノ┬─┬ノ ︵ ( \o°o )\' | clipit"
-# alias text-puttableback="echo '┬──┬◡ﾉ(° -°ﾉ)' | clipit"
-# alias text-puttablesback="echo '┬──┬︵/(ツ)\︵┬──┬' | clipit"
-# alias text-puttablebackharder="echo '┬──┬◡ﾉ(ಠ益ಠﾉ)' | clipit"
-# alias text-shrug="echo '¯\_(ツ)_/¯' | clipit"
-# alias text-handsup="echo '٩◔̯◔۶' | clipit"
-# alias text-sad="echo '(˘_˘٥)' | clipit"
+alias text-disapproval="echo 'ಠ_ಠ' | clipit"
+alias text-fliptable="echo '(╯°□°)╯︵ ┻━┻' | clipit"
+alias text-fliptableharder="echo '(ノಠ益ಠ)ノ彡 ┻━┻' | clipit"
+alias text-tableflipsyou="echo 'ノ┬─┬ノ ︵ ( \o°o )\' | clipit"
+alias text-puttableback="echo '┬──┬◡ﾉ(° -°ﾉ)' | clipit"
+alias text-puttablesback="echo '┬──┬︵/(ツ)\︵┬──┬' | clipit"
+alias text-puttablebackharder="echo '┬──┬◡ﾉ(ಠ益ಠﾉ)' | clipit"
+alias text-shrug="echo '¯\_(ツ)_/¯' | clipit"
+alias text-handsup="echo '٩◔̯◔۶' | clipit"
+alias text-sad="echo '(˘_˘٥)' | clipit"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(rbenv init -)"

@@ -36,3 +36,8 @@ Host s5
 Host s6
   User=botly
   HostName=23.111.151.162
+
+Host ed1
+  User=botly
+  HostName=209.133.209.222
+  Port=41639
